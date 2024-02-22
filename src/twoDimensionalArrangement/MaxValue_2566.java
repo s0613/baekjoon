@@ -1,7 +1,8 @@
-import java.util.Arrays;
+package twoDimensionalArrangement;
+
 import java.util.Scanner;
 
-public class Main {
+public class MaxValue_2566 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int col = 0;
