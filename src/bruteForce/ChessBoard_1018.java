@@ -1,6 +1,7 @@
-import java.util.Scanner;
+package bruteForce;
 
-public class Main {
+import java.util.Scanner;
+public class ChessBoard_1018 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -34,6 +35,7 @@ public class Main {
 
         return repaintCounts;
     }
+
     private static int calculateRepaints(char[][] board, int startX, int startY) {
         int repaintCount = 0;
 
@@ -42,7 +44,8 @@ public class Main {
                 int currentX = startX + x;
                 int currentY = startY + y;
 
-                if ((x + y) % 2 == 0) {
+                if ((board[startX][startY] == 'B' && (x + y) % 2 == 0) ||
+                        (board[startX][startY] == 'W' && (x + y) % 2 == 1)) {
                     if (board[currentX][currentY] != 'B') {
                         repaintCount++;
                     }
@@ -54,6 +57,6 @@ public class Main {
             }
         }
 
-        return repaintCount;
+        return Math.min(repaintCount, 64 - repaintCount);
     }
 }
