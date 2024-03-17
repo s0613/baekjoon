@@ -83,7 +83,6 @@ public class MergeSort_2751 {
         for(int i = 0; i < n; i++){
             bufferedWriter.write(String.valueOf(arr[i]));
             bufferedWriter.write("\n");
-
         }
         bufferedWriter.flush();
     }
