@@ -6,23 +6,19 @@ public class Progression {
         int n = sc.nextInt();
         int k = sc.nextInt();
         int[] arr = new int[n];
-        int total = 0;
+
         for(int i = 0; i < n; i ++){
             arr[i] = sc.nextInt();
-            total += arr[i];
         }
-        int min = 1000000;
+        int max = Integer.MIN_VALUE;
         for(int i = 0; i < n-k; i++){
-            int sum = 0;
-            for(int j = i; j < i+k; j++){
-                sum += arr[j];
-            }
-            if(min > sum){
-                min = sum;
+            for(int j = i+k; j < n; j++){
+             if(Math.abs(arr[i]-arr[j]) > max){
+                 max = Math.abs(arr[i]-arr[j]);
+             }
             }
         }
-        System.out.println(total-min);
-
+        System.out.println(max);
 
 
     }
